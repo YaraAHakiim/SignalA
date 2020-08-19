@@ -52,7 +52,7 @@ public class ConnectingState extends StopableStateWithCallback {
 
                 try
                 {
-                    if(httpResponse != null && httpResponse.getStatus() == 200)
+                    if(httpResponse != null && httpResponse.getStatus() == 200 && httpResponse.getBody() != null)
                     {
                         JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
                         if (json!=null)
@@ -75,7 +75,7 @@ public class ConnectingState extends StopableStateWithCallback {
                             }
                             else
                             {
-                                mConnection.SetNewState(new DisconnectedState(mConnection));
+                                mConnection.SetNewState(new com.zsoft.signala.transport.longpolling.ConnectedState(mConnection));
                             }
                         }
                         else
