@@ -59,8 +59,7 @@ public class ReconnectingState extends StopableStateWithCallback {
 
                 try
                 {
-                	if(httpResponse.getStatus()==200)
-                	{
+                	if(httpResponse.getStatus()==200 && httpResponse.getBody() != null) {
                 		JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
 	                    if (json!=null)
 	                    {

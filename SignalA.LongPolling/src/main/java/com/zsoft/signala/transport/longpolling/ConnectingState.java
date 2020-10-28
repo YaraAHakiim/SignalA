@@ -1,6 +1,5 @@
 package com.zsoft.signala.transport.longpolling;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.turbomanage.httpclient.AsyncCallback;
